@@ -24,9 +24,12 @@ summarise(Cases = sum(Count))
 print(n = 826, Amebiasis)
 
 #Create separate line plots for each county to visualize any upward trends.
-ggplot(data = Amebiasis, aes(x = Year, y = Cases, color = County, group = County)) +
+AllCounties <- ggplot(data = Amebiasis, aes(x = Year, y = Cases, color = County, group = County)) +
 geom_smooth() + geom_point() + theme_bw() + facet_wrap(~County) +
 labs(title = "Trend of Amebiasis Cases by County", x = "Year", y = "Total Cases", color = "County")
+
+#Print off the line graph.
+print(AllCounties)
 
 #Filter the Amebiasis data even more for counties which have a higher infection count in 2014 than in 2001
 increasing_trends <- Amebiasis %>%
@@ -36,9 +39,12 @@ filter(Cases[Year == 2014] > Cases[Year == 2001])
 print(n = 126, increasing_trends)
 
 #Plot that new data
-ggplot(data = increasing_trends, aes(x = Year, y = Cases, color = County, group = County)) +
+Filteredcounties <- ggplot(data = increasing_trends, aes(x = Year, y = Cases, color = County, group = County)) +
 geom_smooth() + geom_point() + theme_bw() + facet_wrap(~County) +
 labs(title = "Trend of Amebiasis Cases by County", x = "Year", y = "Total Cases", color = "County")
+
+#Print off the new line graph.
+print(Filteredcounties)
 
 #Filter the data for the county with the most significant Amebiasis upward trend. 
 SanDiego <- Amebiasis %>%

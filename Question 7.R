@@ -22,9 +22,12 @@ filter(Sex == "Total", Disease == "Cryptosporidiosis", County %in% c("California
 print(Cryptosporidiosis)
 
 #Creating a box plot 
-ggplot(Cryptosporidiosis, aes(x = County, y = Count, fill = County)) +
+Cboxplot <- ggplot(Cryptosporidiosis, aes(x = County, y = Count, fill = County)) +
 geom_boxplot() +
 labs(title = "Cryptosporidiosis Cases by County", x = "County", y = "Cases")
+
+#Print off the box plot.
+print(Cboxplot)
 
 #ANOVA Test
 AnovaTest <- aov(Count ~ County, data = Cryptosporidiosis)
