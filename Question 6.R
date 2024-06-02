@@ -50,3 +50,5 @@ shapiro.test(San_Diego_Dengus$Rate)
 wilcox.test(San_Francisco_Dengus$Rate, San_Diego_Dengus$Rate, paired=FALSE) 
 #Results = W = 83.5, p-value = 0.4917
 
+#Clear all data.
+rm(list = ls())

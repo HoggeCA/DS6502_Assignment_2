@@ -54,4 +54,5 @@ scatterplot_chlamydia_salmonellosis <-ggplot(data = salmonellosis_chlamydia, aes
 scatterplot_chlamydia_salmonellosis
 
 
-
+#Clear all data.
+rm(list = ls())

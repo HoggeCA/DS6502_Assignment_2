@@ -82,4 +82,5 @@ scatterplot_population_tuberculosis <-ggplot(data = Avg_Population, aes(x = case
 scatterplot_population_tuberculosis
 
 
-
+#Clear all data.
+rm(list = ls())
